@@ -16,7 +16,6 @@ package prometheus
 import (
 	"errors"
 	"fmt"
-	"strings"
 	"unicode/utf8"
 
 	"github.com/prometheus/common/model"
@@ -83,5 +82,5 @@ func validateLabelValues(vals []string, expectedNumberOfValues int) error {
 }
 
 func checkLabelName(l string) bool {
-	return model.LabelName(l).IsValid() && !strings.HasPrefix(l, reservedLabelPrefix)
+	return model.LabelName(l).IsValid()
 }
